@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+  --background: 250 250 249;
+  --foreground: 20 21 24;
+  --card: 255 255 255;
+  --card-foreground: 20 21 24;
+  --popover: 255 255 255;
+  --popover-foreground: 20 21 24;
+  --primary: 22 24 29;
+  --primary-foreground: 250 250 249;
+  --secondary: 244 244 245;
+  --secondary-foreground: 39 39 42;
+  --muted: 245 245 244;
+  --muted-foreground: 113 113 122;
+  --accent: 236 253 245;
+  --accent-foreground: 6 78 59;
+  --destructive: 220 38 38;
+  --destructive-foreground: 255 255 255;
+  --border: 228 228 231;
+  --input: 228 228 231;
+  --ring: 39 39 42;
+  --radius: 0.5rem;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 10 10 11;
+  --foreground: 244 244 245;
+  --card: 17 18 20;
+  --card-foreground: 244 244 245;
+  --popover: 20 21 24;
+  --popover-foreground: 244 244 245;
+  --primary: 250 250 249;
+  --primary-foreground: 17 18 20;
+  --secondary: 28 29 33;
+  --secondary-foreground: 228 228 231;
+  --muted: 24 24 27;
+  --muted-foreground: 161 161 170;
+  --accent: 20 83 73;
+  --accent-foreground: 209 250 229;
+  --destructive: 248 113 113;
+  --destructive-foreground: 30 41 59;
+  --border: 39 39 42;
+  --input: 39 39 42;
+  --ring: 212 212 216;
+}
+
+@theme inline {
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
+  --color-card: rgb(var(--card));
+  --color-card-foreground: rgb(var(--card-foreground));
+  --color-popover: rgb(var(--popover));
+  --color-popover-foreground: rgb(var(--popover-foreground));
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
+  --color-secondary: rgb(var(--secondary));
+  --color-secondary-foreground: rgb(var(--secondary-foreground));
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-foreground));
+  --color-accent: rgb(var(--accent));
+  --color-accent-foreground: rgb(var(--accent-foreground));
+  --color-destructive: rgb(var(--destructive));
+  --color-destructive-foreground: rgb(var(--destructive-foreground));
+  --color-border: rgb(var(--border));
+  --color-input: rgb(var(--input));
+  --color-ring: rgb(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 0%, rgb(34 197 94 / 0.08), transparent 28rem),
+    rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: geometricPrecision;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 18% 0%, rgb(20 184 166 / 0.12), transparent 30rem),
+    rgb(var(--background));
+}
+
+::selection {
+  background: rgb(20 184 166 / 0.24);
+}
+
+.glass-panel {
+  background: rgb(var(--card) / 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.kanban-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--border)) transparent;
+}
+
+.kanban-scrollbar::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.kanban-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 999px;
+}
