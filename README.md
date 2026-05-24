@@ -1,4 +1,4 @@
-# Northstar Kanban
+# Taskloom Kanban
 
 A production-shaped realtime collaborative Kanban platform built with Next.js 15, Supabase, PostgreSQL, Supabase Auth, Supabase Realtime, Tailwind CSS, shadcn-style primitives, Framer Motion, Zustand, dnd-kit, React Hook Form/Zod patterns, Lucide icons, and next-themes.
 
